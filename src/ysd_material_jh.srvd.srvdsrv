@@ -1,0 +1,4 @@
+@EndUserText.label: '재료 pv'
+define service YSD_MATERIAL_JH {
+  expose YC_MATERIAL_JH as Material;
+}

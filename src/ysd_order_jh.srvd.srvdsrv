@@ -1,0 +1,5 @@
+@EndUserText.label: '주문 pv'
+define service YSD_ORDER_JH {
+  expose YC_ORDER_JH     as Ordered;
+  expose YC_ORDERITEM_JH as Ordereditem;
+}

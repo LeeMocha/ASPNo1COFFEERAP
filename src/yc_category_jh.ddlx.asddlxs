@@ -1,0 +1,22 @@
+@Metadata.layer: #CUSTOMER
+annotate entity YC_CATEGORY_JH
+    with 
+{
+
+    @UI.facet: [{
+          id: 'categoryDaya',
+          purpose: #STANDARD,
+          label: 'Item Information',
+          type: #IDENTIFICATION_REFERENCE,
+          position: 10
+     }]
+
+    @UI.hidden: true
+    Uuid;
+
+    @UI.lineItem: [{ position : 20 }]
+    @UI.identification: [{ position : 20 }]
+    @EndUserText.label: '카테고리 명'
+    Category;
+    
+}

@@ -1,0 +1,57 @@
+@Metadata.layer: #CUSTOMER
+annotate entity YC_ORDERITEM_JH
+    with 
+{
+    @UI.facet: [{
+          id: 'orderitemData',
+          purpose: #STANDARD,
+          label: 'Item Information',
+          type: #IDENTIFICATION_REFERENCE,
+          position: 10
+     },{
+      id: 'bomData',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: '필요 재료',
+      position: 20,
+      targetElement: '_Menu'
+    }]
+
+    @UI.hidden: true
+    Uuid;
+    
+    @UI.identification: [{ position : 20 }]
+    @UI.lineItem: [{ position : 20 }]
+    @UI.facet: [{ position : 20 }]
+    @EndUserText.label: '메뉴 코드'
+    MenuUuid;
+    
+    @UI.identification: [{ position : 30 }]
+    @UI.lineItem: [{ position : 30 }]
+    @UI.facet: [{ position : 30 }]
+    @EndUserText.label: '메뉴명'
+    MenuName;
+    
+    @UI.identification: [{ position : 40 }]
+    @UI.lineItem: [{ position : 40 }]
+    @UI.facet: [{ position : 40 }]
+    @EndUserText.label: '가격'
+    MenuPrice;
+    
+    @UI.identification: [{ position : 50 }]
+    @UI.lineItem: [{ position : 50 }]
+    @UI.facet: [{ position : 50 }]
+    @EndUserText.label: '메뉴 수량'
+    MenuCnt;
+    
+    @UI.identification: [{ position : 60 }]
+    @UI.lineItem: [{ position : 60 }]
+    @UI.facet: [{ position : 60 }]
+    @EndUserText.label: '메뉴 uuid'
+    forBom;
+    
+    @UI: { lineItem: [{ position: 70}],
+    identification: [{ position: 70}]}
+    _Menu;
+
+}

@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+define behavior for YC_MATERIAL_JH alias Material
+{
+  use create;
+  use update;
+  use delete;
+}

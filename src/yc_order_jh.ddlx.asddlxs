@@ -1,0 +1,51 @@
+@Metadata.layer: #CUSTOMER
+annotate entity YC_ORDER_JH
+    with 
+{
+    @UI.facet: [{ 
+        id : 'idIdentification',
+        type : #IDENTIFICATION_REFERENCE,
+        label : '주문',
+        position : 10
+     },{
+      id: 'idOrderitem',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: '주문상세',
+      position: 20,
+      targetElement: '_OrderItem'
+    }]
+    @UI.identification: [{ position : 10 }]
+    @UI.lineItem: [{ position : 10 }]
+    @EndUserText.label: 'Uuid'
+    Uuid;
+    
+    @UI.identification: [{ position : 20 }]
+    @UI.lineItem: [{ position : 20 }]
+    @UI.facet: [{ position : 20 }]
+    @EndUserText.label: '주문 코드'
+    OrderCode;
+    
+    @UI.identification: [{ position : 30 }]
+    @UI.lineItem: [{ position : 30 }]
+    @UI.facet: [{ position : 30 }]
+    @EndUserText.label: '주문 날짜'
+    OrderDate;
+    
+    @UI.identification: [{ position : 40 }]
+    @UI.lineItem: [{ position : 40 }]
+    @UI.facet: [{ position : 40 }]
+    @EndUserText.label: '총 금액'
+    TotalAmount;
+    
+    @UI.identification: [{ position : 50 }]
+    @UI.lineItem: [{ position : 50 }]
+    @UI.facet: [{ position : 50 }]
+    @EndUserText.label: '원가'
+    BomAmount;
+    
+    @UI: { lineItem: [{ position: 60}],
+       identification: [{ position: 60}]}
+    _OrderItem;
+    
+}

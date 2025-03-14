@@ -1,0 +1,34 @@
+managed implementation in class zbp_r_material_jh unique;
+strict ( 2 );
+
+define behavior for YR_MATERIAL_JH alias Material
+persistent table ytb_material_jh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+
+  create;
+  update;
+  delete;
+
+  determination init_field on save { create; update; }
+
+  mapping for ytb_material_jh
+    {
+      Uuid             = uuid;
+      MaterialName     = material_name;
+      Price            = price;
+      Unit             = unit;
+      MaterialQuantity = material_quantity;
+      Qunit            = qunit;
+      Ppq              = price_per_quan;
+      Createby         = createby;
+      Createdat        = createdat;
+      Lastchangedby    = lastchangedby;
+      Lastchangedat    = lastchangedat;
+    }
+
+}

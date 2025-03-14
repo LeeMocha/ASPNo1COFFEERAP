@@ -1,0 +1,19 @@
+CLASS ycl_bomcalculate_jh DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+     INTERFACES if_sadl_exit_calc_element_read.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS YCL_BOMCALCULATE_JH IMPLEMENTATION.
+
+
+    METHOD if_sadl_exit_calc_element_read~calculate.
+    ENDMETHOD.
+ENDCLASS.

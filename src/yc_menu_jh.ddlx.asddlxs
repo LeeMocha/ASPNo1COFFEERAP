@@ -1,0 +1,133 @@
+@Metadata.layer: #CUSTOMER
+annotate entity YC_MENU_JH
+    with 
+{
+     
+     @UI.facet: [{ 
+        id : 'idIdentification',
+        type : #IDENTIFICATION_REFERENCE,
+        label : '메뉴',
+        position : 10
+     },{
+      id: 'bomData',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: '재료들',
+      position: 20,
+      targetElement: '_Bom'
+    } ]
+    
+    @UI.hidden: true
+    Uuid;
+    
+    @UI.identification: [{ position : 20 }]
+    @UI.lineItem: [{ position : 20 }]
+    @UI.facet: [{ position : 20 }]
+    @EndUserText.label: '메뉴명'
+    MenuName;
+    
+    @UI.identification: [{ position : 30 }]
+    @UI.lineItem: [{ position : 30 }]
+    @UI.facet: [{ position : 30 }]
+    @EndUserText.label: '가격'
+    MenuPrice;
+    
+    @UI.identification: [{ position : 40 }]
+    @UI.lineItem: [{ position : 40 }]
+    @UI.facet: [{ position : 40 }]
+    @EndUserText.label: '가격 단위'
+    Unit;
+    
+    @UI.identification: [{ position : 50 }]
+    @UI.lineItem: [{ position : 50 }]
+    @UI.facet: [{ position : 50 }]
+    @EndUserText.label: '카테고리Uuid'
+    CategoryUuid;
+
+   @UI: { lineItem: [{ position: 60}],
+           identification: [{ position: 60}]}
+    _Bom;
+    
+}
+
+
+
+//@Metadata.layer: #CORE
+//@UI: {
+//    headerInfo: {
+//        typeName: '권한관리1',
+//        typeNamePlural: '권한관리2',
+//        title: {
+//            type: #STANDARD, value: 'Bukrs'
+//        },
+//        description: {
+//            value: 'Ekorg'
+//        }
+//    },
+//    presentationVariant: [{
+//        sortOrder: [{
+//            by: 'Bukrs',
+//            direction: #DESC
+//        }],
+//        visualizations: [{
+//            type: #AS_LINEITEM
+//        }]
+//    }]
+//}
+//annotate entity  YI_ASIM0010C
+//    with 
+//{
+//    @UI.facet: [ 
+//      {
+//      label: '권한관리',
+//      id: 'roleMaster',
+//      type: #COLLECTION,
+//      position: 10
+//        },
+//        {
+//          label: '권한관리',
+//          id: 'roleMaster1',
+//          type: #IDENTIFICATION_REFERENCE,
+//          purpose: #STANDARD,
+//          parentId: 'roleMaster',
+//          position: 10
+//    },{
+//      id: 'UserInfo',
+//      purpose: #STANDARD,
+//      type: #LINEITEM_REFERENCE,
+//      label: '사용자',
+//      position: 20,
+//      targetElement: '_0011C'
+//    } ]
+//  
+//    @UI: { lineItem: [{ position: 10, importance: #HIGH }],
+//           identification: [{ position: 10, importance: #HIGH }],
+//           selectionField: [{ position: 10 }] }
+//    Bukrs;
+//    @UI: { lineItem: [{ position: 20, importance: #HIGH }],
+//           identification: [{ position: 20, importance: #HIGH }],
+//           selectionField: [{ position: 20 }] }
+//    Ekorg;
+//    @UI: { lineItem: [{ position: 30, importance: #HIGH }],
+//           identification: [{ position: 30, importance: #HIGH }],
+//           selectionField: [{ position: 30 }] }
+//    Roleid;
+//    @UI: { lineItem: [{ position: 40, importance: #HIGH }],
+//           identification: [{ position: 40, importance: #HIGH }],
+//           selectionField: [{ position: 40 }] }
+//    Rolenm;
+//    @UI: { lineItem: [{ position: 50, importance: #HIGH }],
+//           identification: [{ position: 50, importance: #HIGH }],
+//           selectionField: [{ position: 50 }] }
+//    Hiddenid;
+//    @UI: { lineItem: [{ position: 60, importance: #HIGH }],
+//           identification: [{ position: 60, importance: #HIGH }],
+//           selectionField: [{ position: 60 }] }
+//    Remark;
+//    @UI.hidden: true
+//    Uuid;
+//    @UI: { lineItem: [{ position: 70, importance: #HIGH }],
+//           identification: [{ position: 70, importance: #HIGH }]}
+//    _0011C;
+//
+//}

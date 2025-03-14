@@ -1,0 +1,4 @@
+@EndUserText.label: '메뉴 판매량'
+define service YSD_DASHBOARD_JH {
+  expose YI_DASHBOARD_JH as MenuSales;
+}

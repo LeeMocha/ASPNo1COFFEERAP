@@ -1,0 +1,41 @@
+@Metadata.layer: #CUSTOMER
+annotate entity YC_BOM_JH
+    with 
+{
+
+    @UI.facet: [{
+          id: 'bomData',
+          purpose: #STANDARD,
+          label: 'Item Information',
+          type: #IDENTIFICATION_REFERENCE,
+          position: 10
+     }]
+
+    @UI.hidden: true
+    Uuid;
+
+    @UI.lineItem: [{ position : 15 }]
+    @UI.identification: [{ position : 15 }]
+    @EndUserText.label: '메뉴Uuid'
+    MenuUuid;
+
+    @UI.lineItem: [{ position : 20 }]
+    @UI.identification: [{ position : 20 }]
+    @EndUserText.label: '재료 Uuid'
+    MaterialUuid;
+
+    @UI.lineItem: [{ position : 30 }]
+    @UI.identification: [{ position : 30 }]
+    @EndUserText.label: '재료명'
+    MaterialName;
+
+    @UI.lineItem: [{ position : 40 }]
+    @UI.identification: [{ position : 40 }]
+    @EndUserText.label: '정량'
+    BomQuantity;
+
+    @UI.lineItem: [{ position : 50 }]
+    @UI.identification: [{ position : 50 }]
+    @EndUserText.label: '단위'
+    Qunit;
+}

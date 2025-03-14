@@ -1,0 +1,62 @@
+managed implementation in class zbp_r_menu_jh unique;
+strict ( 2 );
+
+define behavior for YR_MENU_JH alias Menu
+persistent table ytb_menu_jh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+
+  create;
+  update;
+  delete;
+
+  determination init_field on save { create; }
+
+  mapping for ytb_menu_jh
+    {
+      Uuid          = uuid;
+      CategoryUuid  = category_uuid;
+      MenuName      = menu_name;
+      MenuPrice     = menu_price;
+      Unit          = unit;
+      Createby      = createby;
+      Createdat     = createdat;
+      Lastchangedby = lastchangedby;
+      Lastchangedat = lastchangedat;
+    }
+
+  association _Bom { create; }
+}
+
+define behavior for YR_BOM_JH alias Bom
+persistent table ytb_bom_jh
+lock dependent by _Menu
+authorization dependent by _Menu
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) MenuUuid;
+
+  update;
+  delete;
+
+  mapping for ytb_bom_jh
+    {
+      Uuid          = uuid;
+      MenuUuid      = menu_uuid;
+      MaterialUuid  = material_uuid;
+      BomQuantity   = bom_quantity;
+      Qunit         = qunit;
+      Createby      = createby;
+      Createdat     = createdat;
+      Lastchangedby = lastchangedby;
+      Lastchangedat = lastchangedat;
+    }
+
+  association _Menu;
+}

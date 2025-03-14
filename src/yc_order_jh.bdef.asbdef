@@ -1,0 +1,21 @@
+projection;
+strict ( 2 );
+
+define behavior for YC_ORDER_JH alias Order
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _OrderItem { create; }
+}
+
+define behavior for YC_ORDERITEM_JH alias Orderitem
+{
+  use update;
+  use delete;
+
+  use association _Order;
+  use association _Menu;
+
+}

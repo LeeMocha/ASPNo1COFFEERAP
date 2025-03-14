@@ -1,0 +1,31 @@
+managed implementation in class zbp_r_payment_jh unique;
+strict ( 2 );
+
+define behavior for YR_PAYMENT_JH alias Payment
+persistent table ytb_payment_jh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+
+  determination init_field on save { create; }
+
+  create;
+  update;
+  delete;
+
+  mapping for ytb_payment_jh
+    {
+      Uuid               = uuid;
+      PaymentDate        = payment_date;
+      PaymentDescription = payment_description;
+      PaymentAmount      = payment_amount;
+      Unit               = unit;
+      Createby           = createby;
+      Createdat          = createdat;
+      Lastchangedby      = lastchangedby;
+      Lastchangedat      = lastchangedat;
+    }
+}

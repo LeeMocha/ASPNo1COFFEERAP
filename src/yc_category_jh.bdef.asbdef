@@ -1,0 +1,9 @@
+projection;
+strict ( 2 );
+
+define behavior for YC_CATEGORY_JH alias Category
+{
+  use create;
+  use update;
+  use delete;
+}

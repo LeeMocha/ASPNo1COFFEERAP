@@ -1,0 +1,30 @@
+managed implementation in class zbp_r_inventory_jh unique;
+strict ( 2 );
+
+define behavior for YR_INVENTORY_JH alias Inventory
+persistent table ytb_inventory_jh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+
+
+  create;
+  update;
+  delete;
+
+  mapping for ytb_inventory_jh
+    {
+      Uuid              = uuid;
+      MaterialUuid      = material_uuid;
+      InventoryQuantity = inventory_quantity;
+      Qunit             = qunit;
+      Createby          = createby;
+      Createdat         = createdat;
+      Lastchangedby     = lastchangedby;
+      Lastchangedat     = lastchangedat;
+    }
+
+}

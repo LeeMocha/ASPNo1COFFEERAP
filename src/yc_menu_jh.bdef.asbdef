@@ -1,0 +1,20 @@
+projection;
+strict ( 2 );
+
+define behavior for YC_MENU_JH alias Menu
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Bom { create; }
+}
+
+define behavior for YC_BOM_JH alias Bom
+{
+
+  use update;
+  use delete;
+
+  use association _Menu;
+}

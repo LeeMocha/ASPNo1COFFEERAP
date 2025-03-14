@@ -1,0 +1,5 @@
+@EndUserText.label: '메뉴 pv'
+define service YSD_MENU_JH {
+  expose YC_MENU_JH as Menu;
+  expose YC_BOM_JH  as Bom;
+}

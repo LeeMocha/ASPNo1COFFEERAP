@@ -1,0 +1,4 @@
+@EndUserText.label: '재고 pv'
+define service YSD_INVENTORY_JH {
+  expose YC_INVENTORY_JH as Inventory;
+}

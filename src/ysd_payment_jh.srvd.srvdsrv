@@ -1,0 +1,4 @@
+@EndUserText.label: '지출'
+define service YSD_PAYMENT_JH {
+  expose YR_PAYMENT_JH as Payment;
+}

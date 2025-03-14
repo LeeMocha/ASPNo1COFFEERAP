@@ -1,0 +1,44 @@
+@Metadata.layer: #CUSTOMER
+annotate entity YC_INVENTORY_JH
+    with 
+{
+    @UI.facet: [{ 
+        id : 'idIdentification',
+        type : #IDENTIFICATION_REFERENCE,
+        label : 'Screen',
+        position : 10
+     }]
+    
+    @UI.hidden: true
+    Uuid;
+    
+    @UI.lineItem: [{ position : 10 }]
+    @UI.identification: [{ position : 10 }]
+    @EndUserText.label: '재료 Uuid'
+    MaterialUuid;
+    
+    @UI.identification: [{ position : 20 }]
+    @UI.lineItem: [{ position : 20 }]
+    @UI.facet: [{ position : 20 }]
+    @EndUserText.label: '재료명'
+    MaterialName;
+    
+    @UI.identification: [{ position : 30 }]
+    @UI.lineItem: [{ position : 30 }]
+    @UI.facet: [{ position : 30 }]
+    @EndUserText.label: '재료 남은량'
+    InventoryQuantity;
+    
+    @UI.identification: [{ position : 40 }]
+    @UI.lineItem: [{ position : 40 }]
+    @UI.facet: [{ position : 40 }]
+    @EndUserText.label: '재료 단위'
+    Qunit;
+    
+    @UI.identification: [{ position : 50 }]
+    @UI.lineItem: [{ position : 50 }]
+    @UI.facet: [{ position : 50 }]
+    @EndUserText.label: 'Ppq'
+    Ppq;
+    
+}

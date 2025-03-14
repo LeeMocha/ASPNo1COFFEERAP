@@ -1,0 +1,63 @@
+managed implementation in class zbp_r_order_jh unique;
+strict ( 2 );
+
+define behavior for YR_ORDER_JH alias Order
+persistent table ytb_order_jh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+
+  create;
+  update;
+  delete;
+
+  determination init_field on save { create; }
+
+  mapping for ytb_order_jh
+    {
+      Uuid          = uuid;
+      OrderCode     = order_code;
+      OrderDate     = order_date;
+      Createby      = createby;
+      Createdat     = createdat;
+      Lastchangedby = lastchangedby;
+      Lastchangedat = lastchangedat;
+    }
+
+  association _OrderItem { create; }
+}
+
+define behavior for YR_ORDERITEM_JH alias Orderitem
+persistent table ytb_orderitem_jh
+lock dependent by _Order
+authorization dependent by _Order
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly ) OrderUuid;
+
+  determination reduce_inventory on save { create; }
+
+  update;
+  delete;
+
+  mapping for ytb_orderitem_jh
+    {
+      Uuid          = uuid;
+      OrderUuid     = order_uuid;
+      MenuUuid      = menu_uuid;
+      MenuCnt       = menu_cnt;
+      Createby      = createby;
+      Createdat     = createdat;
+      Lastchangedby = lastchangedby;
+      Lastchangedat = lastchangedat;
+    }
+
+  association _Order;
+  association _Menu;
+
+}

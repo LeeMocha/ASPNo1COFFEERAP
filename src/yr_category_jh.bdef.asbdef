@@ -1,0 +1,27 @@
+managed implementation in class zbp_r_category_jh unique;
+strict ( 2 );
+
+define behavior for YR_CATEGORY_JH alias Category
+persistent table ytb_category_jh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+
+  field ( readonly, numbering : managed ) Uuid;
+
+  create;
+  update;
+  delete;
+
+  mapping for ytb_category_jh
+    {
+      Uuid          = uuid;
+      Category      = category;
+      Createby      = createby;
+      Createdat     = createdat;
+      Lastchangedby = lastchangedby;
+      Lastchangedat = lastchangedat;
+    }
+
+}
